@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: kulaaasazurevotingappredis 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kulaaasazurevotingappredis
+  template:
+    metadata:
+      labels:
+        app: kulaaasazurevotingappredis 
+    spec:
+      containers:
+        - name: kulaaasazurevotingappredis 
+          image: kubsacr.azurecr.io/kulaaasazurevotingappredis
+          ports:
+          - containerPort: 80
